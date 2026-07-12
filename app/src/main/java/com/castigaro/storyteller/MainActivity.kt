@@ -8,6 +8,8 @@ import android.view.View
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.castigaro.common.update.UpdateChecker
+import com.castigaro.common.update.UpdateUi
 import com.castigaro.storyteller.data.AppSettings
 import com.castigaro.storyteller.data.Message
 import com.castigaro.storyteller.data.Story
@@ -20,6 +22,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var adapter: StoryAdapter
+    private val updateChecker = UpdateChecker(VERSION_URL, BuildConfig.VERSION_CODE)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,6 +38,9 @@ class MainActivity : AppCompatActivity() {
         binding.storyList.adapter = adapter
 
         binding.fabNewStory.setOnClickListener { startNewStory() }
+
+        // Stille Prüfung beim Start — zeigt nur etwas, wenn eine neue Version da ist.
+        UpdateUi.checkSilently(this, binding.root, updateChecker)
     }
 
     override fun onResume() {
@@ -110,10 +116,19 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, HelpActivity::class.java))
             true
         }
+        R.id.action_check_update -> {
+            UpdateUi.checkManually(this, binding.root, updateChecker)
+            true
+        }
         R.id.action_settings -> {
             startActivity(Intent(this, SettingsActivity::class.java))
             true
         }
         else -> super.onOptionsItemSelected(item)
+    }
+
+    companion object {
+        private const val VERSION_URL =
+            "https://appsonar.de/downloads/storyteller-version.json"
     }
 }

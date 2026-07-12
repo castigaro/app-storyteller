@@ -34,5 +34,7 @@ neu geschriebene Mobile-App.
 ## Build
 
 CI baut per `.github/workflows/build-storyteller.yml` und veröffentlicht
-die APKs im GitHub-Release `storyteller-latest`. Die App ist bewusst
-**noch nicht** auf appsonar.de gelistet.
+die APKs samt Versions-Manifest im GitHub-Release `storyteller-latest`;
+`deploy-website.yml` synct beides nach [appsonar.de](https://appsonar.de).
+Die App prüft beim Start und über „Nach Update suchen“ gegen das Manifest
+auf neue Versionen (gemeinsamer `UpdateChecker` aus `common/android`).
