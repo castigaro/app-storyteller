@@ -11,8 +11,8 @@ android {
         applicationId = "com.castigaro.storyteller"
         minSdk = 26
         targetSdk = 34
-        versionCode = 2
-        versionName = "1.1.0"
+        versionCode = 3
+        versionName = "1.2.0"
     }
 
     // Keystore und Passwort kommen aus GitHub-Secrets (siehe build-storyteller.yml).

@@ -54,6 +54,14 @@
                 style="@style/HelpBody"
                 android:text="@string/help_key_body" />
 
+            <TextView
+                style="@style/HelpHeading"
+                android:text="@string/help_costs_title" />
+
+            <TextView
+                style="@style/HelpBody"
+                android:text="@string/help_costs_body" />
+
         </LinearLayout>
 
     </ScrollView>

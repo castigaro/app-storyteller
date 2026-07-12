@@ -1,7 +1,8 @@
 package com.castigaro.storyteller.api
 
 import android.content.Context
-import com.castigaro.storyteller.data.AppSettings
+import com.castigaro.common.llm.ModelPricing
+import com.castigaro.common.llm.ProviderSettings
 import com.castigaro.storyteller.data.Message
 import com.castigaro.storyteller.data.Story
 import kotlinx.coroutines.Dispatchers
@@ -69,17 +70,28 @@ object StoryApi {
     /** Erzeugt den nächsten Erzähl-Abschnitt für die Geschichte. */
     suspend fun nextBeat(context: Context, story: Story): String =
         withContext(Dispatchers.IO) {
-            val apiKey = AppSettings.getApiKey(context)
-            if (apiKey.isBlank()) throw ApiException("Kein API-Key hinterlegt.")
-            val model = AppSettings.getModel(context)
+            val config = ProviderSettings.activeConfig(context)
+                ?: throw ApiException("Kein aktiver API-Key — in den Einstellungen hinterlegen oder aktivieren.")
             val history = trimmedHistory(story)
 
-            if (AppSettings.getProvider(context) == AppSettings.PROVIDER_OPENAI) {
-                requestOpenAi(apiKey, model, history)
+            if (config.provider == ProviderSettings.PROVIDER_OPENAI) {
+                requestOpenAi(context, config.apiKey, config.model, history)
             } else {
-                requestAnthropic(apiKey, model, history)
+                requestAnthropic(context, config.apiKey, config.model, history)
             }
         }
+
+    /** Bucht die geschätzten Kosten eines Aufrufs auf den Zähler des Anbieters. */
+    private fun trackCost(
+        context: Context,
+        provider: String,
+        model: String,
+        inputTokens: Long,
+        outputTokens: Long,
+    ) {
+        val micros = ModelPricing.estimateCostMicros(provider, model, inputTokens, outputTokens)
+        ProviderSettings.addCostMicros(context, provider, micros)
+    }
 
     private fun trimmedHistory(story: Story): List<Message> {
         val all = story.messages
@@ -90,7 +102,12 @@ object StoryApi {
     private fun apiRole(message: Message): String =
         if (message.role == Message.ROLE_NARRATOR) "assistant" else "user"
 
-    private fun requestAnthropic(apiKey: String, model: String, history: List<Message>): String {
+    private fun requestAnthropic(
+        context: Context,
+        apiKey: String,
+        model: String,
+        history: List<Message>,
+    ): String {
         val body = JSONObject().apply {
             put("model", model)
             put("max_tokens", 1024)
@@ -118,6 +135,13 @@ object StoryApi {
                 throw ApiException(apiErrorMessage(responseText, response.code))
             }
             val json = JSONObject(responseText)
+            json.optJSONObject("usage")?.let { usage ->
+                trackCost(
+                    context, ProviderSettings.PROVIDER_ANTHROPIC, model,
+                    inputTokens = usage.optLong("input_tokens", 0L),
+                    outputTokens = usage.optLong("output_tokens", 0L),
+                )
+            }
             if (json.optString("stop_reason") == "refusal") {
                 throw ApiException("Die Anfrage wurde vom Modell abgelehnt.")
             }
@@ -132,7 +156,12 @@ object StoryApi {
         }
     }
 
-    private fun requestOpenAi(apiKey: String, model: String, history: List<Message>): String {
+    private fun requestOpenAi(
+        context: Context,
+        apiKey: String,
+        model: String,
+        history: List<Message>,
+    ): String {
         val body = JSONObject().apply {
             put("model", model)
             put("max_tokens", 1024)
@@ -161,7 +190,15 @@ object StoryApi {
             if (!response.isSuccessful) {
                 throw ApiException(apiErrorMessage(responseText, response.code))
             }
-            return JSONObject(responseText)
+            val json = JSONObject(responseText)
+            json.optJSONObject("usage")?.let { usage ->
+                trackCost(
+                    context, ProviderSettings.PROVIDER_OPENAI, model,
+                    inputTokens = usage.optLong("prompt_tokens", 0L),
+                    outputTokens = usage.optLong("completion_tokens", 0L),
+                )
+            }
+            return json
                 .getJSONArray("choices").getJSONObject(0)
                 .getJSONObject("message").getString("content").trim()
         }

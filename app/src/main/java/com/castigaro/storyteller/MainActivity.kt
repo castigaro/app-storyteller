@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.castigaro.common.update.UpdateChecker
 import com.castigaro.common.update.UpdateUi
-import com.castigaro.storyteller.data.AppSettings
+import com.castigaro.common.llm.ProviderSettings
 import com.castigaro.storyteller.data.Message
 import com.castigaro.storyteller.data.Story
 import com.castigaro.storyteller.data.StoryStore
@@ -56,7 +56,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun startNewStory() {
-        if (!AppSettings.isConfigured(this)) {
+        if (!ProviderSettings.isConfigured(this)) {
             Snackbar.make(binding.root, R.string.needs_key, Snackbar.LENGTH_LONG)
                 .setAction(R.string.action_settings) {
                     startActivity(Intent(this, SettingsActivity::class.java))
