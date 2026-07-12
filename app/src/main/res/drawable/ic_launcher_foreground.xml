@@ -1,0 +1,19 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Aufgeschlagenes Buch mit Erzähl-Stern -->
+    <group
+        android:scaleX="0.55"
+        android:scaleY="0.55"
+        android:translateX="24.3"
+        android:translateY="24.3">
+        <path
+            android:fillColor="#FFFFFF"
+            android:pathData="M50,34 C42,27 30,25 20,28 L20,74 C30,71 42,73 50,80 C58,73 70,71 80,74 L80,28 C70,25 58,27 50,34 Z M26,33 C33,32 42,34 47,39 L47,71 C41,67 33,65 26,66 Z M74,66 C67,65 59,67 53,71 L53,39 C58,34 67,32 74,33 Z" />
+        <path
+            android:fillColor="#FFFFFF"
+            android:pathData="M50,8 L53,17 L62,20 L53,23 L50,32 L47,23 L38,20 L47,17 Z" />
+    </group>
+</vector>

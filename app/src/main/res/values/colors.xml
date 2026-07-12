@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Abend-Indigo: Palette der Erzähl-App. -->
+    <color name="primary">#4A4494</color>
+    <color name="primary_dark">#332F6B</color>
+    <color name="secondary">#7A72C7</color>
+    <color name="white">#FFFFFF</color>
+    <color name="ic_launcher_background">#332F6B</color>
+    <!-- Feste Toolbar-Farbe (im Dark-Mode überschrieben). -->
+    <color name="toolbar_bg">#4A4494</color>
+</resources>

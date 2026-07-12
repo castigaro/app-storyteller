@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">StoryTeller</string>
+
+    <!-- Hauptliste -->
+    <string name="empty_state">Noch keine Geschichten.\n\nTippe auf +, beschreibe eine Welt — und die Geschichte beginnt.</string>
+    <string name="untitled_story">Neue Geschichte</string>
+    <string name="story_subtitle">%1$s · %2$s</string>
+    <string name="story_status_running">läuft</string>
+    <string name="story_status_finished">zu Ende erzählt</string>
+    <string name="delete_story">Geschichte löschen</string>
+    <string name="delete_story_message">„%1$s“ wirklich löschen?</string>
+    <string name="delete">Löschen</string>
+    <string name="cancel">Abbrechen</string>
+    <string name="needs_key">Zum Erzählen braucht die App einen API-Key. Bitte in den Einstellungen eintragen.</string>
+
+    <!-- Neue Geschichte -->
+    <string name="new_story_title">Neue Geschichte</string>
+    <string name="new_story_intro">Beschreibe die Welt oder die Ausgangslage — ein Satz reicht. Zum Beispiel: „Eine Burg im Nebel, in der nachts die Rüstungen wandern“ oder „Meine Tochter Lina, 6, erlebt ein Abenteuer mit ihrem Plüschdrachen“.</string>
+    <string name="world_hint">Deine Welt / Idee</string>
+    <string name="new_story_start">Erzählen</string>
+
+    <!-- Geschichte -->
+    <string name="narrator_writing">Der Erzähler schreibt …</string>
+    <string name="reply_hint">Deine Antwort …</string>
+    <string name="send_reply">Antwort senden</string>
+    <string name="speech_input">Spracheingabe</string>
+    <string name="speech_prompt">Sprich deine Antwort …</string>
+    <string name="speech_unavailable">Spracheingabe ist auf diesem Gerät nicht verfügbar.</string>
+    <string name="story_error">Fehler: %1$s</string>
+    <string name="retry">Erneut</string>
+    <string name="story_finished">✦ Die Geschichte ist zu Ende erzählt. ✦</string>
+    <string name="action_tts">Vorlesen</string>
+
+    <!-- Einstellungen -->
+    <string name="title_settings">Einstellungen</string>
+    <string name="action_settings">Einstellungen</string>
+    <string name="provider_label">KI-Anbieter</string>
+    <string name="provider_anthropic">Anthropic (Claude)</string>
+    <string name="provider_openai">OpenAI (GPT)</string>
+    <string name="api_key_label">API-Key</string>
+    <string name="model_label">Modell</string>
+    <string name="model_hint">Standard: claude-sonnet-5 (Anthropic) bzw. gpt-4o-mini (OpenAI). Für günstigere Geschichten z. B. claude-haiku-4-5 eintragen.</string>
+    <string name="save">Speichern</string>
+    <string name="settings_saved">Einstellungen gespeichert</string>
+    <string name="privacy_note">Hinweis: Deine Texte werden zum Erzählen an den gewählten KI-Anbieter übertragen. Der API-Key wird nur lokal auf diesem Gerät gespeichert.</string>
+
+    <!-- Hilfe -->
+    <string name="title_help">Hilfe</string>
+    <string name="action_help">Hilfe</string>
+    <string name="help_start_title">Eine Geschichte beginnen</string>
+    <string name="help_start_body">Tippe auf + und beschreibe kurz die Welt oder Ausgangslage — je konkreter, desto besser (Figuren, Ort, Stimmung). Die KI denkt sich dazu einen Titel aus und erzählt den ersten Abschnitt.</string>
+    <string name="help_play_title">Mitspielen</string>
+    <string name="help_play_body">Jeder Abschnitt endet mit einer Frage oder Entscheidung. Antworte frei — alles, was du erwähnst (Namen, Gegenstände, Wendungen), baut der Erzähler in die weitere Handlung ein. Die Geschichte folgt einem Bogen aus drei Akten und kommt von selbst zu einem Ende. Angefangene Geschichten kannst du jederzeit über die Liste fortsetzen; langes Drücken löscht eine Geschichte.</string>
+    <string name="help_voice_title">Sprechen &amp; Vorlesen</string>
+    <string name="help_voice_body">Mit dem Mikrofon-Knopf sprichst du deine Antwort, statt zu tippen (nutzt die Android-Spracherkennung). Über das Menü „Vorlesen“ liest die App neue Abschnitte mit der Android-Sprachausgabe vor — gut zum gemeinsamen Zuhören.</string>
+    <string name="help_key_title">API-Key</string>
+    <string name="help_key_body">In den Einstellungen wählst du Anthropic (Claude) oder OpenAI (GPT) und trägst deinen API-Key ein. Der Key wird nur lokal auf dem Gerät gespeichert; deine Eingaben werden ausschließlich zum Erzählen an den gewählten Anbieter übertragen.</string>
+</resources>

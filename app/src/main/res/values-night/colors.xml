@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Helleres Violett für Akzente (Buttons, Icons, Links), damit sie auf
+         dunklem Untergrund gut lesbar sind. Spieler-Sprechblasen nutzen
+         colorPrimary mit weißem Text — auch dafür passt der hellere Ton. -->
+    <color name="primary">#7A72C7</color>
+    <color name="primary_dark">#5D55A8</color>
+    <color name="secondary">#A9A2E8</color>
+    <!-- Toolbar bleibt dunkel, damit der weiße Titel darauf gut lesbar ist. -->
+    <color name="toolbar_bg">#211D45</color>
+</resources>
