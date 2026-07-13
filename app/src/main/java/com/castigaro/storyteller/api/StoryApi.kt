@@ -93,7 +93,7 @@ object StoryApi {
         ProviderSettings.addCostMicros(context, provider, micros)
     }
 
-    private fun trimmedHistory(story: Story): List<Message> {
+    internal fun trimmedHistory(story: Story): List<Message> {
         val all = story.messages
         if (all.size <= MAX_HISTORY) return all
         return listOf(all.first()) + all.takeLast(MAX_HISTORY - 1)

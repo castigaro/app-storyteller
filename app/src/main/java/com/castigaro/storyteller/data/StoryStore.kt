@@ -13,6 +13,11 @@ object StoryStore {
 
     private var stories: MutableList<Story>? = null
 
+    /** Nur für Tests: verwirft den In-Memory-Cache, erzwingt Neuladen. */
+    internal fun resetForTest() {
+        stories = null
+    }
+
     private fun file(context: Context): File = File(context.filesDir, "stories.json")
 
     private fun load(context: Context): MutableList<Story> {
