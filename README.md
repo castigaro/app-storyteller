@@ -25,7 +25,8 @@ neu geschriebene Mobile-App.
 ## Technik
 
 - Kotlin, ViewBinding, Material Components; gemeinsames Basis-Theme aus
-  `common/android` (`Theme.AppSonar`).
+  [`android-apps-common`](https://github.com/castigaro/android-apps-common)
+  (`Theme.AppSonar`).
 - Direkte HTTP-Anbindung (OkHttp) an die Anthropic Messages API bzw.
   OpenAI Chat Completions API — kein SDK.
 - Geschichten liegen als JSON in den App-Dateien (`stories.json`).
@@ -33,8 +34,8 @@ neu geschriebene Mobile-App.
 
 ## Build
 
-CI baut per `.github/workflows/build-storyteller.yml` und veröffentlicht
-die APKs samt Versions-Manifest im GitHub-Release `storyteller-latest`;
-`deploy-website.yml` synct beides nach [appsonar.de](https://appsonar.de).
+CI baut per `.github/workflows/build.yml` und veröffentlicht die APKs samt
+Versions-Manifest im GitHub-Release `latest`;
+[appsonar.de](https://appsonar.de) verlinkt direkt darauf.
 Die App prüft beim Start und über „Nach Update suchen“ gegen das Manifest
-auf neue Versionen (gemeinsamer `UpdateChecker` aus `common/android`).
+auf neue Versionen (gemeinsamer `UpdateChecker` aus `android-apps-common`).

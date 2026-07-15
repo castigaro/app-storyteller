@@ -129,6 +129,6 @@ class MainActivity : AppCompatActivity() {
 
     companion object {
         private const val VERSION_URL =
-            "https://appsonar.de/downloads/storyteller-version.json"
+            "https://github.com/castigaro/app-storyteller/releases/download/latest/storyteller-version.json"
     }
 }

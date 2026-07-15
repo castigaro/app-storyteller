@@ -18,6 +18,6 @@ rootProject.name = "StoryTeller"
 include(":app")
 
 // Gemeinsame Bibliothek der AppSonar-Apps (Basis-Theme, Update-Erkennung).
-// Liegt im Monorepo neben apps/ und wird hier als Modul eingebunden.
+// Liegt als Geschwister-Repo neben diesem Repository und wird hier als Modul eingebunden.
 include(":common")
-project(":common").projectDir = file("../../common/android")
+project(":common").projectDir = file("../android-apps-common/android")
