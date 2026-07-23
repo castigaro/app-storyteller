@@ -1,11 +1,11 @@
-package com.castigaro.storyteller.data
+package com.appsonar.storyteller.data
 
 import android.content.Context
 
 /**
  * App-eigene Einstellungen (app-privater Speicher). Die KI-Provider- und
  * Key-Einstellungen kommen aus der gemeinsamen Bibliothek
- * (com.castigaro.common.llm.ProviderSettings) — hier liegt nur noch,
+ * (com.appsonar.common.llm.ProviderSettings) — hier liegt nur noch,
  * was StoryTeller-spezifisch ist.
  */
 object AppSettings {

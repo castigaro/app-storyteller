@@ -1,11 +1,11 @@
-package com.castigaro.storyteller
+package com.appsonar.storyteller
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.castigaro.storyteller.data.Message
-import com.castigaro.storyteller.databinding.ItemMsgNarratorBinding
-import com.castigaro.storyteller.databinding.ItemMsgPlayerBinding
+import com.appsonar.storyteller.data.Message
+import com.appsonar.storyteller.databinding.ItemMsgNarratorBinding
+import com.appsonar.storyteller.databinding.ItemMsgPlayerBinding
 
 /** Chat-Verlauf der Geschichte: Erzähler links, Spieler rechts. */
 class MessageAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {

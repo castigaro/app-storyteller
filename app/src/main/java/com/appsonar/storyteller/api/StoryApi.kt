@@ -1,10 +1,10 @@
-package com.castigaro.storyteller.api
+package com.appsonar.storyteller.api
 
 import android.content.Context
-import com.castigaro.common.llm.ModelPricing
-import com.castigaro.common.llm.ProviderSettings
-import com.castigaro.storyteller.data.Message
-import com.castigaro.storyteller.data.Story
+import com.appsonar.common.llm.ModelPricing
+import com.appsonar.common.llm.ProviderSettings
+import com.appsonar.storyteller.data.Message
+import com.appsonar.storyteller.data.Story
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import okhttp3.MediaType.Companion.toMediaType

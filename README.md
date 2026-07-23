@@ -25,7 +25,7 @@ neu geschriebene Mobile-App.
 ## Technik
 
 - Kotlin, ViewBinding, Material Components; gemeinsames Basis-Theme aus
-  [`android-apps-common`](https://github.com/castigaro/android-apps-common)
+  [`android-apps-common`](https://github.com/appsonar/android-apps-common)
   (`Theme.AppSonar`).
 - Direkte HTTP-Anbindung (OkHttp) an die Anthropic Messages API bzw.
   OpenAI Chat Completions API — kein SDK.

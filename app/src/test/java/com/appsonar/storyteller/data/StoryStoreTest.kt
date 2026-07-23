@@ -1,4 +1,4 @@
-package com.castigaro.storyteller.data
+package com.appsonar.storyteller.data
 
 import android.content.Context
 import androidx.test.core.app.ApplicationProvider

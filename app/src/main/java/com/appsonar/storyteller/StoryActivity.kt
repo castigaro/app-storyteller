@@ -1,4 +1,4 @@
-package com.castigaro.storyteller
+package com.appsonar.storyteller
 
 import android.app.Activity
 import android.content.Intent
@@ -13,12 +13,12 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.castigaro.storyteller.api.StoryApi
-import com.castigaro.storyteller.data.AppSettings
-import com.castigaro.storyteller.data.Message
-import com.castigaro.storyteller.data.Story
-import com.castigaro.storyteller.data.StoryStore
-import com.castigaro.storyteller.databinding.ActivityStoryBinding
+import com.appsonar.storyteller.api.StoryApi
+import com.appsonar.storyteller.data.AppSettings
+import com.appsonar.storyteller.data.Message
+import com.appsonar.storyteller.data.Story
+import com.appsonar.storyteller.data.StoryStore
+import com.appsonar.storyteller.databinding.ActivityStoryBinding
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.launch
 import java.util.Locale

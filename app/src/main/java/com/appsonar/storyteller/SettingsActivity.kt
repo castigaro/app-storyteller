@@ -1,9 +1,9 @@
-package com.castigaro.storyteller
+package com.appsonar.storyteller
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.castigaro.common.llm.ProviderSettingsController
-import com.castigaro.storyteller.databinding.ActivitySettingsBinding
+import com.appsonar.common.llm.ProviderSettingsController
+import com.appsonar.storyteller.databinding.ActivitySettingsBinding
 
 /**
  * Einstellungen rund um die KI-Anbindung. Die eigentliche Oberfläche und

@@ -1,7 +1,7 @@
-package com.castigaro.storyteller.api
+package com.appsonar.storyteller.api
 
-import com.castigaro.storyteller.data.Message
-import com.castigaro.storyteller.data.Story
+import com.appsonar.storyteller.data.Message
+import com.appsonar.storyteller.data.Story
 import org.junit.Assert.assertEquals
 import org.junit.Test
 import org.junit.runner.RunWith

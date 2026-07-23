@@ -1,4 +1,4 @@
-package com.castigaro.storyteller.data
+package com.appsonar.storyteller.data
 
 import org.json.JSONObject
 import org.junit.Assert.assertEquals

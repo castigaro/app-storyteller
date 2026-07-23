@@ -1,8 +1,8 @@
-package com.castigaro.storyteller
+package com.appsonar.storyteller
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.castigaro.storyteller.databinding.ActivityHelpBinding
+import com.appsonar.storyteller.databinding.ActivityHelpBinding
 
 class HelpActivity : AppCompatActivity() {
 

@@ -4,15 +4,15 @@ plugins {
 }
 
 android {
-    namespace = "com.castigaro.storyteller"
+    namespace = "com.appsonar.storyteller"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.castigaro.storyteller"
+        applicationId = "com.appsonar.storyteller"
         minSdk = 26
         targetSdk = 34
-        versionCode = 5
-        versionName = "1.2.2"
+        versionCode = 6
+        versionName = "1.3.0"
     }
 
     // Keystore und Passwort kommen aus GitHub-Secrets (siehe build.yml).
@@ -24,7 +24,7 @@ android {
         create("release") {
             storeFile = releaseKeystore
             storePassword = releaseStorePassword
-            keyAlias = "markdownviewer"
+            keyAlias = "appsonar"
             keyPassword = releaseStorePassword
         }
     }

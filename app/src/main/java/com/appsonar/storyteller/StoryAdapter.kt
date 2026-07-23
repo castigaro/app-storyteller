@@ -1,10 +1,10 @@
-package com.castigaro.storyteller
+package com.appsonar.storyteller
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.castigaro.storyteller.data.Story
-import com.castigaro.storyteller.databinding.RowStoryBinding
+import com.appsonar.storyteller.data.Story
+import com.appsonar.storyteller.databinding.RowStoryBinding
 import java.text.DateFormat
 import java.util.Date
 

@@ -1,4 +1,4 @@
-package com.castigaro.storyteller
+package com.appsonar.storyteller
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,14 +8,14 @@ import android.view.View
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.castigaro.common.update.UpdateChecker
-import com.castigaro.common.update.UpdateUi
-import com.castigaro.common.llm.ProviderSettings
-import com.castigaro.storyteller.data.Message
-import com.castigaro.storyteller.data.Story
-import com.castigaro.storyteller.data.StoryStore
-import com.castigaro.storyteller.databinding.ActivityMainBinding
-import com.castigaro.storyteller.databinding.DialogNewStoryBinding
+import com.appsonar.common.update.UpdateChecker
+import com.appsonar.common.update.UpdateUi
+import com.appsonar.common.llm.ProviderSettings
+import com.appsonar.storyteller.data.Message
+import com.appsonar.storyteller.data.Story
+import com.appsonar.storyteller.data.StoryStore
+import com.appsonar.storyteller.databinding.ActivityMainBinding
+import com.appsonar.storyteller.databinding.DialogNewStoryBinding
 import com.google.android.material.snackbar.Snackbar
 
 class MainActivity : AppCompatActivity() {
@@ -129,6 +129,6 @@ class MainActivity : AppCompatActivity() {
 
     companion object {
         private const val VERSION_URL =
-            "https://github.com/castigaro/app-storyteller/releases/download/latest/storyteller-version.json"
+            "https://github.com/appsonar/app-storyteller/releases/download/latest/storyteller-version.json"
     }
 }
